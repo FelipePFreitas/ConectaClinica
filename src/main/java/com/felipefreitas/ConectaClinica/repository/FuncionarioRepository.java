@@ -1,4 +1,4 @@
-package com.felipefreitas.ConectaClinica.Repository;
+package com.felipefreitas.ConectaClinica.repository;
 
 import com.felipefreitas.ConectaClinica.entity.FuncionarioEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
