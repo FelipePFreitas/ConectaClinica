@@ -4,8 +4,15 @@ import lombok.Getter;
 
 @Getter
 public enum Cargo {
-    MEDICO,
-    ENFERMEIRO,
-    RECEPCIONISTA,
-    GERENTE
+
+    MEDICO("Medico"),
+    ENFERMEIRO("Enfermeiro"),
+    RECEPCIONISTA("Recepcionista"),
+    GERENTE("Gerente");
+
+    private final String cargo;
+
+    Cargo(String cargo) {
+        this.cargo = cargo;
+    }
 }

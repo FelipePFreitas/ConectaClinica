@@ -16,6 +16,6 @@ public class EspecialidadeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "especialidade", nullable = false, unique = true)
+    @Column(name = "especialidade", nullable = false, unique = true,length = 50)
     private String especialidade;
 }

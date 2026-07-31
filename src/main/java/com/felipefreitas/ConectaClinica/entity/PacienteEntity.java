@@ -36,5 +36,6 @@ public class PacienteEntity {
     private LocalDate dataNascimento;
 
     @Column(name = "data_cadastro", nullable = false)
+    @Builder.Default
     private LocalDateTime dataCadastro = LocalDateTime.now();
 }

@@ -19,14 +19,11 @@ public class FuncionarioEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome", nullable = false)
+    @Column(name = "nome", nullable = false,length = 100)
     private String nome;
 
-    @Column(name = "cpf", nullable = false, unique = true)
+    @Column(name = "cpf", nullable = false, unique = true, length = 14)
     private String cpf;
-
-    @Column(name = "telefone", nullable = false)
-    private String telefone;
 
     @Column(name = "email", nullable = false, unique = true)
     private String email;
@@ -38,14 +35,12 @@ public class FuncionarioEntity {
     @Column(name = "cargo", nullable = false)
     private Cargo cargo;
 
+    @Builder.Default
     @Column(name = "ativo", nullable = false)
     private boolean ativo = true;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false)
     private RoleFuncionario role;
-
-    @Column(name = "data_admissao", nullable = false)
-    private LocalDate dataAdmissao;
 
 }

@@ -19,7 +19,7 @@ public class MedicoEntity {
     @Column(name = "nome", nullable = false)
     private String nome;
 
-    @Column(name = "crm", nullable = false, unique = true)
+    @Column(name = "crm", nullable = false, unique = true,length = 13)
     private String crm;
 
     @JoinColumn(name = "especialidade_id", referencedColumnName = "id", nullable = false)
@@ -33,5 +33,6 @@ public class MedicoEntity {
     private String telefone;
 
     @Column(name = "ativo", nullable = false)
+    @Builder.Default
     private boolean ativo = true;
 }
