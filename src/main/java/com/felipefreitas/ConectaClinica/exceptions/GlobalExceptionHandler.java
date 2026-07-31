@@ -81,7 +81,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(problemDetail);
     }
 
-    // 4. Erros Inesperados do Servidor (500)
+    // 4. Fallback para Qualquer Erro Não Trato no Servidor (500)
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ProblemDetail> handleUncaughtException(Exception ex) {
         ErrorEnum error = ErrorEnum.ERRO_INTERNO_SERVIDOR;
