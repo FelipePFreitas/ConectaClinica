@@ -1,4 +1,4 @@
-package com.felipefreitas.ConectaClinica;
+package com.felipefreitas.ConectaClinica.util;
 
 public class CPFUtil {
 

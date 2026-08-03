@@ -1,6 +1,6 @@
 package com.felipefreitas.ConectaClinica.service;
 
-import com.felipefreitas.ConectaClinica.CPFUtil;
+import com.felipefreitas.ConectaClinica.util.CPFUtil;
 import com.felipefreitas.ConectaClinica.dto.funcionario.FuncionarioRequestDTO;
 import com.felipefreitas.ConectaClinica.dto.funcionario.FuncionarioResponseDTO;
 import com.felipefreitas.ConectaClinica.entity.FuncionarioEntity;
