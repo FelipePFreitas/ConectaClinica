@@ -12,12 +12,16 @@ public enum ErrorEnum {
     CREDENCIAIS_INVALIDAS(401, 4, "E-mail ou senha incorretos"),
     RECURSO_NAO_ENCONTRADO(404, 5, "Recurso solicitado não foi encontrado"),
     ERRO_INTERNO_SERVIDOR(500, 6, "Ocorreu um erro interno inesperado no servidor"),
+    CPF_INVALIDO(401, 7, "O CPF informado é inválido"),
 
     // 100-199: Erros de Funcionário / Autenticação de Usuário
     FUNCIONARIO_NAO_ENCONTRADO(404, 100, "Funcionário não encontrado"),
     EMAIL_FUNCIONARIO_JA_CADASTRADO(409, 101, "O e-mail informado já está cadastrado para outro funcionário"),
     CPF_FUNCIONARIO_JA_CADASTRADO(409, 102, "O CPF informado já está cadastrado para outro funcionário"),
     FUNCIONARIO_INATIVO(400, 103, "O funcionário informado está inativo no sistema"),
+    CARGO_NAO_CADASTRADO(404, 104, "O cargo não está cadastrado no sistema"),
+    ROLE_NAO_CADASTRADO(404, 105, "O role não está cadastrado no sistema"),
+
 
     // 200-299: Erros de Médico
     MEDICO_NAO_ENCONTRADO(404, 200, "Médico não encontrado"),
