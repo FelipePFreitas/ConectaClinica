@@ -24,13 +24,13 @@ public class AutenticacaoService {
         FuncionarioEntity funcionarioEntity = funcionarioRepository.findByEmail(loginRequestDTO.email())
                 .orElseThrow(() -> new BaseException(ErrorEnum.CREDENCIAIS_INVALIDAS));
 
-        if (!funcionarioEntity.isAtivo()) {
-            throw new BaseException(ErrorEnum.FUNCIONARIO_INATIVO);
-        }
-
         // 2. Validar se a senha enviada bate com o hash salvo no banco
         if (!passwordEncoder.matches(loginRequestDTO.senha(), funcionarioEntity.getSenha())) {
             throw new BaseException(ErrorEnum.CREDENCIAIS_INVALIDAS);
+        }
+
+        if (!funcionarioEntity.isAtivo()) {
+            throw new BaseException(ErrorEnum.FUNCIONARIO_INATIVO);
         }
 
         // 3. Gerar o token JWT para o e-mail autenticado
