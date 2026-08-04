@@ -3,7 +3,6 @@ package com.felipefreitas.ConectaClinica.service;
 import com.felipefreitas.ConectaClinica.dto.funcionario.FuncionarioRequestDTO;
 import com.felipefreitas.ConectaClinica.dto.funcionario.FuncionarioResponseDTO;
 import com.felipefreitas.ConectaClinica.entity.FuncionarioEntity;
-import com.felipefreitas.ConectaClinica.enums.Cargo;
 import com.felipefreitas.ConectaClinica.enums.ErrorEnum;
 import com.felipefreitas.ConectaClinica.enums.RoleFuncionario;
 import com.felipefreitas.ConectaClinica.exceptions.BaseException;
@@ -45,13 +44,6 @@ public class FuncionarioService {
 
         if (funcionarioRequestDTO.cargo() == null) {
             throw new BaseException(ErrorEnum.DADOS_INVALIDOS);
-        }
-
-        boolean cargoValido = Arrays.stream(Cargo.values())
-                .anyMatch(c -> c.name().equalsIgnoreCase(String.valueOf(funcionarioRequestDTO.cargo())));
-
-        if (!cargoValido) {
-            throw new BaseException(ErrorEnum.CARGO_NAO_CADASTRADO);
         }
 
         boolean roleValida =

@@ -1,6 +1,5 @@
 package com.felipefreitas.ConectaClinica.dto.funcionario;
 
-import com.felipefreitas.ConectaClinica.enums.Cargo;
 import com.felipefreitas.ConectaClinica.enums.RoleFuncionario;
 
 public record FuncionarioResponseDTO(

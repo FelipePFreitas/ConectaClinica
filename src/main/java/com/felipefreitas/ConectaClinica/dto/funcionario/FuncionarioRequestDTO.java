@@ -1,6 +1,5 @@
 package com.felipefreitas.ConectaClinica.dto.funcionario;
 
-import com.felipefreitas.ConectaClinica.enums.Cargo;
 import com.felipefreitas.ConectaClinica.enums.RoleFuncionario;
 import jakarta.validation.constraints.*;
 import org.hibernate.validator.constraints.br.CPF;

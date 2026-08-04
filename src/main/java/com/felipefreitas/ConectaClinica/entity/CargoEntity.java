@@ -4,18 +4,18 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "especialidades")
+@Table(name = "cargos")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class EspecialidadeEntity {
+public class CargoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "especialidade", nullable = false, unique = true,length = 50)
-    private String especialidade;
+    @Column(nullable = false,unique = true)
+    private String nome;
 }
