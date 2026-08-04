@@ -13,6 +13,7 @@ public enum ErrorEnum {
     RECURSO_NAO_ENCONTRADO(404, 5, "Recurso solicitado não foi encontrado"),
     ERRO_INTERNO_SERVIDOR(500, 6, "Ocorreu um erro interno inesperado no servidor"),
     CPF_INVALIDO(401, 7, "O CPF informado é inválido"),
+    ACAO_NAO_PERMITIDA(400,8, "Ação não permitida"),
 
     // 100-199: Erros de Funcionário / Autenticação de Usuário
     FUNCIONARIO_NAO_ENCONTRADO(404, 100, "Funcionário não encontrado"),
