@@ -14,17 +14,17 @@ public record FuncionarioResponseDTO(
         String registroProfissional,
         String especialidade // 👈 Aplicado o mesmo padrão para especialidade
 ) {
-    public FuncionarioResponseDTO(FuncionarioEntity f) {
+    public FuncionarioResponseDTO(FuncionarioEntity funcionarioEntity) {
         this(
-                f.getId(),
-                f.getNome(),
-                f.getCpf(),
-                f.getEmail(),
-                f.getCargo() != null ? f.getCargo().getNome() : null,
-                f.getRole(),
-                f.isAtivo(),
-                f.getRegistroProfissional(),
-                f.getEspecialidade() != null ? f.getEspecialidade().getNome() : null
+                funcionarioEntity.getId(),
+                funcionarioEntity.getNome(),
+                funcionarioEntity.getCpf(),
+                funcionarioEntity.getEmail(),
+                funcionarioEntity.getCargo() != null ? funcionarioEntity.getCargo().getNome() : null,
+                funcionarioEntity.getRole(),
+                funcionarioEntity.isAtivo(),
+                funcionarioEntity.getRegistroProfissional(),
+                funcionarioEntity.getEspecialidade() != null ? funcionarioEntity.getEspecialidade().getNome() : null
         );
     }
 }
