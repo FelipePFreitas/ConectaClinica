@@ -1,6 +1,5 @@
 package com.felipefreitas.ConectaClinica.entity;
 
-import com.felipefreitas.ConectaClinica.enums.Especialidade;
 import com.felipefreitas.ConectaClinica.enums.StatusAgendamento;
 import jakarta.persistence.*;
 import lombok.*;
@@ -32,7 +31,7 @@ public class ConsultaEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status_agendamento", nullable = false)
-    private Especialidade especialidade;
+    private EspecialidadeEntity especialidade;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tipo_exame_id", nullable = false)

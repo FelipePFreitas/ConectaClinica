@@ -27,9 +27,10 @@ public class FuncionarioController {
     private final FuncionarioService funcionarioService;
 
     @PostMapping
-    @Operation(summary = "Cadastrar funcionário", description = "Cadastra um novo funcionário na clínica.")
+    @Operation(summary = "Cadastrar funcionário", description = "Cadastra um novo funcionário Administrativo na " +
+            "clínica.")
     ResponseEntity<FuncionarioResponseDTO> cadastrarFuncionario(@RequestBody @Valid FuncionarioRequestDTO funcionarioRequestDTO) {
-        FuncionarioResponseDTO funcionarioSalvo = funcionarioService.cadastrarFuncionario(funcionarioRequestDTO);
+        FuncionarioResponseDTO funcionarioSalvo = funcionarioService.cadastrarFuncionarioAdministrativo(funcionarioRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(funcionarioSalvo);
     }
 

@@ -6,8 +6,9 @@ import lombok.Getter;
 public enum RoleFuncionario {
 
     ROLE_ADMIN("Admin"),
-    ROLE_FUNCIONARIO("Funcionário"),
+    ROLE_ADMINISTRATIVO("Administrativo"),
     ROLE_MEDICO("Médico"),
+    ROLE_ENFERMAGEM("Enfermagem"),
     ROLE_GERENTE("Gerente");
 
     private final String role;

@@ -1,6 +1,5 @@
 package com.felipefreitas.ConectaClinica.entity;
 
-import com.felipefreitas.ConectaClinica.enums.Especialidade;
 import com.felipefreitas.ConectaClinica.enums.RoleFuncionario;
 import jakarta.persistence.*;
 import lombok.*;
@@ -49,10 +48,11 @@ public class FuncionarioEntity implements UserDetails {
     private boolean ativo = true;
 
     @Column(unique = true)
-    private String crm;
+    private String registroProfissional;
 
-    @Enumerated(EnumType.STRING)
-    private Especialidade especialidade;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "especialidade_id")
+    private EspecialidadeEntity especialidade;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

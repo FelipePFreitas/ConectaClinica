@@ -26,7 +26,8 @@ public enum ErrorEnum {
 
     // 200-299: Erros de Médico
     MEDICO_NAO_ENCONTRADO(404, 200, "Médico não encontrado"),
-    CRM_JA_CADASTRADO(409, 201, "O CRM informado já está cadastrado no sistema"),
+    REGISTRO_PROFISSIONAL_OBRIGATORIO(409, 201, "O Registro Profissional é obrigatório"),
+    REGISTRO_PROFISSIONAL_JA_CADASTRADO(409, 201, "O Registro Profissional já está cadastrado para outro médico"),
     EMAIL_MEDICO_JA_CADASTRADO(409, 202, "O e-mail informado já está cadastrado para outro médico"),
     MEDICO_INATIVO(400, 203, "O médico informado está inativo e não pode receber novos agendamentos"),
 
