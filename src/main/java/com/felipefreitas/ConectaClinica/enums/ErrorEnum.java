@@ -21,6 +21,7 @@ public enum ErrorEnum {
     CPF_FUNCIONARIO_JA_CADASTRADO(409, 102, "O CPF informado já está cadastrado para outro funcionário"),
     FUNCIONARIO_INATIVO(400, 103, "O funcionário informado está inativo no sistema"),
     CARGO_NAO_CADASTRADO(404, 104, "O cargo não está cadastrado no sistema"),
+    CARGO_JA_CADASTRADO(404, 104, "O cargo já está cadastrado no sistema"),
     ROLE_NAO_CADASTRADO(404, 105, "O role não está cadastrado no sistema"),
 
 
