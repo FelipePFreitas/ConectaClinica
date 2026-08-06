@@ -11,10 +11,9 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/cargos")
@@ -26,9 +25,24 @@ public class CargoController {
     private final CargoService cargoService;
 
     @PostMapping
-    @Operation(summary = "Cadastrar cargo", description = "Cadastra um novo cargo na clinica.")
+    @Operation(summary = "Cadastrar cargos", description = "Cadastra um novo cargo na clinica.")
    public ResponseEntity<CargoResponseDTO> cadastrarCargo (@RequestBody @Valid CargoRequestDTO cargoRequestDTO){
         CargoResponseDTO cargoResponseDTO = cargoService.cadastrarCargo(cargoRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(cargoResponseDTO);
+    }
+
+    @GetMapping
+    @Operation(summary = "Listar cargos", description = "Listar todos os cargos em ordem alfabética")
+    public ResponseEntity<List<CargoResponseDTO>> listarTodosCargos(){
+        List<CargoResponseDTO> listaCargos = cargoService.listarCargos();
+        return ResponseEntity.ok(listaCargos);
+    }
+
+    @DeleteMapping("/{id}")
+    @Operation(summary = "Deletar cargos", description = "Deletar cargo, desde que não esteja atrelado a nenhum " +
+            "funcionário")
+    public ResponseEntity<Void> deletarCargo(@PathVariable Long id){
+        cargoService.deletarCargoPorId(id);
+        return ResponseEntity.noContent().build();
     }
 }
