@@ -18,7 +18,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/funcionario")
+@RequestMapping("/api/v1/funcionarios")
 @RequiredArgsConstructor
 @Tag(name = "Funcionários", description = "Endpoints para gerenciamento de funcionários (Acesso exclusivo para GERENTE)")
 @SecurityRequirement(name = "bearer-key")
@@ -29,28 +29,28 @@ public class FuncionarioController {
     @PostMapping
     @Operation(summary = "Cadastrar funcionário", description = "Cadastra um novo funcionário Administrativo na " +
             "clínica.")
-    ResponseEntity<FuncionarioResponseDTO> cadastrarFuncionario(@RequestBody @Valid FuncionarioRequestDTO funcionarioRequestDTO) {
+    public ResponseEntity<FuncionarioResponseDTO> cadastrarFuncionario(@RequestBody @Valid FuncionarioRequestDTO funcionarioRequestDTO) {
         FuncionarioResponseDTO funcionarioSalvo = funcionarioService.cadastrarFuncionarioAdministrativo(funcionarioRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(funcionarioSalvo);
     }
 
     @GetMapping("/cpf/{cpf}")
     @Operation(summary = "Buscar funcionário por CPF", description = "Retorna os dados de um funcionário a partir do seu CPF.")
-    ResponseEntity<FuncionarioResponseDTO> buscarFuncionarioCpf(@PathVariable String cpf) {
+    public ResponseEntity<FuncionarioResponseDTO> buscarFuncionarioCpf(@PathVariable String cpf) {
         FuncionarioResponseDTO funcionarioBuscado = funcionarioService.buscarFuncionarioPorCpf(cpf);
         return ResponseEntity.ok(funcionarioBuscado);
     }
 
     @GetMapping
     @Operation(summary = "Listar funcionários paginados", description = "Retorna a lista de todos os funcionários com suporte a paginação e ordenação.")
-    ResponseEntity<Page<FuncionarioResponseDTO>> listarFuncionarios(@PageableDefault(size = 10, sort = "nome") Pageable pageable) {
+    public ResponseEntity<Page<FuncionarioResponseDTO>> listarFuncionarios(@PageableDefault(size = 10, sort = "nome") Pageable pageable) {
         Page<FuncionarioResponseDTO> pagina = funcionarioService.listarTodosFuncionarios(pageable);
         return ResponseEntity.ok(pagina);
     }
 
     @PutMapping("/{id}")
     @Operation(summary = "Atualizar dados do funcionário", description = "Atualiza os dados cadastrais de um funcionário existente.")
-    ResponseEntity<FuncionarioResponseDTO> atualizarFuncionario(@PathVariable Long id,
+    public ResponseEntity<FuncionarioResponseDTO> atualizarFuncionario(@PathVariable Long id,
                                                                 @RequestBody FuncionarioRequestDTO funcionarioRequestDTO,
                                                                 @AuthenticationPrincipal FuncionarioEntity funcionarioEntity) {
         FuncionarioResponseDTO funcionarioResponseDTO = funcionarioService.atualizarDadosFuncionario(id,
