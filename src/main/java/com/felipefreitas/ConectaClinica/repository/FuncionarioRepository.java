@@ -14,4 +14,6 @@ public interface FuncionarioRepository extends JpaRepository<FuncionarioEntity, 
     Optional<FuncionarioEntity> findByCpf(String cpf);
 
     Optional<FuncionarioEntity> findByRegistroProfissional(String registroProfissional);
+
+    boolean existsByCargoId (Long id);
 }
