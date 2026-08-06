@@ -7,5 +7,5 @@ public record EspecialidadeRequestDTO(
 
         @NotBlank(message = "A especialidade não pode estar em branco")
         @Size(max = 50, message = "Especialidade não pode passar de 50 caracteres")
-        String especialidade) {
+        String nome) {
 }
