@@ -8,11 +8,11 @@ public record FuncionarioResponseDTO(
         String nome,
         String cpf,
         String email,
-        String cargo, // 👈 Em vez de cargoId e nomeCargo, deixamos apenas o nome do cargo
+        String cargo,
         RoleFuncionario role,
         boolean ativo,
         String registroProfissional,
-        String especialidade // 👈 Aplicado o mesmo padrão para especialidade
+        String especialidade
 ) {
     public FuncionarioResponseDTO(FuncionarioEntity funcionarioEntity) {
         this(
