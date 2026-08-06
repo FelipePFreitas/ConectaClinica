@@ -3,7 +3,6 @@ package com.felipefreitas.ConectaClinica.service;
 import com.felipefreitas.ConectaClinica.dto.cargo.CargoRequestDTO;
 import com.felipefreitas.ConectaClinica.dto.cargo.CargoResponseDTO;
 import com.felipefreitas.ConectaClinica.entity.CargoEntity;
-import com.felipefreitas.ConectaClinica.entity.FuncionarioEntity;
 import com.felipefreitas.ConectaClinica.enums.ErrorEnum;
 import com.felipefreitas.ConectaClinica.exceptions.BaseException;
 import com.felipefreitas.ConectaClinica.repository.CargoRepository;
