@@ -51,6 +51,6 @@ public class PacienteEntity {
     @Column(nullable = false,length = 50)
     private String cidade;
 
-    @Column(nullable = false,length = 50)
+    @Column(nullable = false,length = 2)
     private String estado;
 }
