@@ -1,6 +1,7 @@
 package com.felipefreitas.ConectaClinica.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -36,6 +37,20 @@ public class PacienteEntity {
     private LocalDate dataNascimento;
 
     @Column(name = "data_cadastro", nullable = false)
-    @Builder.Default
-    private LocalDateTime dataCadastro = LocalDateTime.now();
+    private LocalDateTime dataCadastro;
+
+    @Column(nullable = false,length = 50)
+    private String endereco;
+
+    @Column(nullable = false,length = 20)
+    private String numero;
+
+    @Column(nullable = false,length = 50)
+    private String bairro;
+
+    @Column(nullable = false,length = 50)
+    private String cidade;
+
+    @Column(nullable = false,length = 2)
+    private String estado;
 }

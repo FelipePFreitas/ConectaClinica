@@ -2,7 +2,6 @@ package com.felipefreitas.ConectaClinica.dto.consulta;
 
 import com.felipefreitas.ConectaClinica.dto.especialidade.EspecialidadeResponseDTO;
 import com.felipefreitas.ConectaClinica.dto.funcionario.FuncionarioResponseDTO;
-import com.felipefreitas.ConectaClinica.dto.medico.MedicoResponseDTO;
 import com.felipefreitas.ConectaClinica.dto.paciente.PacienteResponseDTO;
 import com.felipefreitas.ConectaClinica.dto.tipoexame.TipoExameResponseDTO;
 import com.felipefreitas.ConectaClinica.enums.StatusAgendamento;
@@ -14,7 +13,7 @@ public record ConsultaResponseDTO(
         PacienteResponseDTO paciente,
         EspecialidadeResponseDTO especialidade,
         TipoExameResponseDTO tipoExame,
-        MedicoResponseDTO medico,
+        FuncionarioResponseDTO medico,
         String observacao,
         LocalDateTime dataCadastro,
         StatusAgendamento statusAgendamento,
