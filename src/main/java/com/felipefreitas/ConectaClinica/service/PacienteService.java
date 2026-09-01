@@ -12,8 +12,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
-
 @Service
 @RequiredArgsConstructor
 public class PacienteService {
@@ -42,6 +40,31 @@ public class PacienteService {
         }
 
         PacienteEntity paciente = pacienteMapper.toEntity(pacienteRequestDTO);
+
+        PacienteEntity pacienteSalvo = pacienteRepository.save(paciente);
+
+        return pacienteMapper.toDTO(pacienteSalvo);
+    }
+
+    @Transactional
+    public PacienteResponseDTO atualizarDadosPaciente(String cpf, PacienteRequestDTO pacienteRequestDTO) {
+
+        String cpfLimpo = CPFUtil.cleanCpf(cpf);
+
+        if (!CPFUtil.isValid(cpfLimpo)) {
+            throw new BaseException(ErrorEnum.CPF_INVALIDO);
+        }
+
+        PacienteEntity paciente =
+                pacienteRepository.findByCpf(cpfLimpo).orElseThrow(() -> new BaseException(ErrorEnum.PACIENTE_NAO_ENCONTRADO));
+
+        String novoEmail = pacienteRequestDTO.email().toLowerCase().trim();
+
+        if (!paciente.getEmail().equalsIgnoreCase(novoEmail) && pacienteRepository.existsByEmail(novoEmail)) {
+            throw new BaseException(ErrorEnum.EMAIL_PACIENTE_JA_CADASTRADO);
+        }
+
+        pacienteMapper.updateEntityFromDTO(pacienteRequestDTO,paciente);
 
         PacienteEntity pacienteSalvo = pacienteRepository.save(paciente);
 

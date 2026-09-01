@@ -6,6 +6,7 @@ import com.felipefreitas.ConectaClinica.dto.paciente.PacienteResponseDTO;
 import com.felipefreitas.ConectaClinica.entity.PacienteEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
 public interface PacienteMapper {
@@ -19,4 +20,12 @@ public interface PacienteMapper {
     PacienteEntity toEntity(PacienteRequestDTO dto);
 
     PacienteResponseDTO toDTO(PacienteEntity entity);
+
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "cpf", ignore = true)
+    @Mapping(target = "dataCadastro", ignore = true)
+    @Mapping(target = "ativo", ignore = true)
+    @Mapping(target = "email", expression = "java(dto.email().toLowerCase().trim())")
+
+    void updateEntityFromDTO(PacienteRequestDTO dto, @MappingTarget PacienteEntity entity);
 }
