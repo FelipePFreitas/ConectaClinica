@@ -7,21 +7,7 @@
     <option name="selectedModelId" value="gpt-5.6-luna" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9048a4da-995a-485b-b58e-7c4d08d42827" name="Changes" comment="Remover classes e arquivos não utilizados do projeto">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/felipefreitas/ConectaClinica/ConectaClinicaApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/felipefreitas/ConectaClinica/ConectaClinicaApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="9048a4da-995a-485b-b58e-7c4d08d42827" name="Changes" comment="remover arquivos e configurações desnecessárias do projeto" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -513,7 +499,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refatorando todo o codigo. Adicionando cadastro de funcionario hospitalar" />
     <MESSAGE value="Criando constructor que ja transforma entidade em response." />
     <MESSAGE value="Adicionando CargoService" />
     <MESSAGE value="Atualizando o CargoResponseDTO" />
@@ -538,7 +523,8 @@
     <MESSAGE value="Adicionando MapStruct" />
     <MESSAGE value="Adicionar método para atualizar dados do paciente e buscar por CPF no repositório" />
     <MESSAGE value="Remover classes e arquivos não utilizados do projeto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remover classes e arquivos não utilizados do projeto" />
+    <MESSAGE value="remover arquivos e configurações desnecessárias do projeto" />
+    <option name="LAST_COMMIT_MESSAGE" value="remover arquivos e configurações desnecessárias do projeto" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
