@@ -7,11 +7,8 @@
     <option name="selectedModelId" value="gpt-5.6-luna" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9048a4da-995a-485b-b58e-7c4d08d42827" name="Changes" comment="Adicionar arquivos de configuração inicial do projeto e dependências do Spring Boot">
+    <list default="true" id="9048a4da-995a-485b-b58e-7c4d08d42827" name="Changes" comment="Adicionar implementação de autenticação com JWT e endpoints relacionados">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -515,8 +512,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adicionando CargoService" />
-    <MESSAGE value="Atualizando o CargoResponseDTO" />
     <MESSAGE value="Adicionando Erro de cargo no ENUM" />
     <MESSAGE value="Atualizando FuncionarioResponseDTO" />
     <MESSAGE value="Adicionando public aos métodos" />
@@ -540,7 +535,9 @@
     <MESSAGE value="Remover classes e arquivos não utilizados do projeto" />
     <MESSAGE value="remover arquivos e configurações desnecessárias do projeto" />
     <MESSAGE value="Adicionar arquivos de configuração inicial do projeto e dependências do Spring Boot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionar arquivos de configuração inicial do projeto e dependências do Spring Boot" />
+    <MESSAGE value="Adicionar configuração inicial do projeto e dependências do Spring Boot" />
+    <MESSAGE value="Adicionar implementação de autenticação com JWT e endpoints relacionados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionar implementação de autenticação com JWT e endpoints relacionados" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
