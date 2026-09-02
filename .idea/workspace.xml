@@ -7,7 +7,12 @@
     <option name="selectedModelId" value="gpt-5.6-luna" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9048a4da-995a-485b-b58e-7c4d08d42827" name="Changes" comment="remover arquivos e configurações desnecessárias do projeto" />
+    <list default="true" id="9048a4da-995a-485b-b58e-7c4d08d42827" name="Changes" comment="Adicionar arquivos de configuração inicial do projeto e dependências do Spring Boot">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +72,7 @@
   <component name="ProjectSessionTemplates">
     <option name="panelTemplate">
       <template>
-        <option name="modeId" value="Ask" />
+        <option name="modeId" value="Agent" />
         <option name="model">
           <model>
             <option name="modelType" value="builtin_id" />
@@ -84,29 +89,32 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ConectaClinicaApplication.executor": "Run",
-    "Docker.compose.yml: Compose Deployment.executor": "Run",
-    "Maven.ConectaClinica [compile].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "copilot.chat.legacySessionMetadata.migrated": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/FelipePereiradeFreit/Desktop/Felipe/ConectaClinica",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ConectaClinicaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ConectaClinica [compile].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/FelipePereiradeFreit/Desktop/Felipe/ConectaClinica&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn compile" />
@@ -114,6 +122,8 @@
   </component>
   <component name="RunManager" selected="Application.ConectaClinicaApplication">
     <configuration name="ConectaClinicaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="azul-21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.felipefreitas.ConectaClinica.ConectaClinicaApplication" />
       <module name="ConectaClinica" />
       <extension name="coverage">
@@ -127,6 +137,8 @@
       </method>
     </configuration>
     <configuration name="ConectaClinicaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="azul-21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="ConectaClinica" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.felipefreitas.ConectaClinica.ConectaClinicaApplication" />
@@ -134,6 +146,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ConectaClinicaApplication" />
+      <item itemvalue="Spring Boot.ConectaClinicaApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ConectaClinicaApplication" />
@@ -499,7 +515,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Criando constructor que ja transforma entidade em response." />
     <MESSAGE value="Adicionando CargoService" />
     <MESSAGE value="Atualizando o CargoResponseDTO" />
     <MESSAGE value="Adicionando Erro de cargo no ENUM" />
@@ -524,7 +539,8 @@
     <MESSAGE value="Adicionar método para atualizar dados do paciente e buscar por CPF no repositório" />
     <MESSAGE value="Remover classes e arquivos não utilizados do projeto" />
     <MESSAGE value="remover arquivos e configurações desnecessárias do projeto" />
-    <option name="LAST_COMMIT_MESSAGE" value="remover arquivos e configurações desnecessárias do projeto" />
+    <MESSAGE value="Adicionar arquivos de configuração inicial do projeto e dependências do Spring Boot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionar arquivos de configuração inicial do projeto e dependências do Spring Boot" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
