@@ -24,4 +24,8 @@ public class UsuarioEntity {
     @Column(nullable = false)
     private String senha;
 
+    @OneToOne
+    @JoinColumn(name = "funcionario_id", referencedColumnName = "id")
+    private FuncionarioEntity funcionario;
+
 }
