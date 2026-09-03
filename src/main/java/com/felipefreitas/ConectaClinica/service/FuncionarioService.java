@@ -12,14 +12,17 @@ import com.felipefreitas.ConectaClinica.repository.UsuarioRepository;
 import com.felipefreitas.ConectaClinica.util.SenhaUtil;
 import io.swagger.v3.oas.annotations.servers.Server;
 import lombok.AllArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 
-@Server
 @AllArgsConstructor
-public class FucionarioService {
+@Server
+public class FuncionarioService {
 
     private final FuncionarioRepository funcionarioRepository;
     private final UsuarioRepository usuarioRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final EmailService emailService;
 
     @Transactional
     public FuncionarioResponseDTO cadastrarFuncionario(FuncionarioRequestDTO funcionarioRequestDTO) {
@@ -44,12 +47,19 @@ public class FucionarioService {
 
         UsuarioEntity usuarioEntity = UsuarioEntity.builder()
                 .login(funcionarioSalvo.getCpf())
-                .senha(senhaAleatoria)
+                .senha(passwordEncoder.encode(senhaAleatoria))
                 .funcionario(funcionarioSalvo)
                 .role(RoleUsuario.ROLE_USER)
                 .build();
 
         usuarioRepository.save(usuarioEntity);
+
+        emailService.enviarSenhaInicial(
+                funcionarioSalvo.getNome(),
+                funcionarioSalvo.getEmail(),
+                funcionarioSalvo.getCpf(),
+                senhaAleatoria
+        );
 
         return new FuncionarioResponseDTO(
                 funcionarioSalvo.getId(),

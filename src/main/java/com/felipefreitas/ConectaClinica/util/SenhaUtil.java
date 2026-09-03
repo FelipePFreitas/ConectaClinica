@@ -1,18 +1,22 @@
 package com.felipefreitas.ConectaClinica.util;
 
+import java.security.SecureRandom;
+
 public class SenhaUtil {
 
-    public static String geradorSenhaAleatoria(int tamanho) {
+    private static final SecureRandom RANDOM = new SecureRandom();
+    private static final String CARACTERES =
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
 
-        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+    public static String geradorSenhaAleatoria(int tamanho) {
 
         if (tamanho < 6) {
             throw new IllegalArgumentException("O tamanho da senha deve ser no mínimo 6 caracteres.");
         }
-        StringBuilder senha = new StringBuilder();
+
+        StringBuilder senha = new StringBuilder(tamanho);
         for (int i = 0; i < tamanho; i++) {
-            int indice = (int) (Math.random() * caracteres.length());
-            senha.append(caracteres.charAt(indice));
+            senha.append(CARACTERES.charAt(RANDOM.nextInt(CARACTERES.length())));
         }
         return senha.toString();
     }
