@@ -10,14 +10,15 @@ import com.felipefreitas.ConectaClinica.exceptions.BaseExceptions;
 import com.felipefreitas.ConectaClinica.repository.FuncionarioRepository;
 import com.felipefreitas.ConectaClinica.repository.UsuarioRepository;
 import com.felipefreitas.ConectaClinica.util.SenhaUtil;
-import io.swagger.v3.oas.annotations.servers.Server;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@AllArgsConstructor
-@Server
+@Service
+@RequiredArgsConstructor
 public class FuncionarioService {
+
 
     private final FuncionarioRepository funcionarioRepository;
     private final UsuarioRepository usuarioRepository;
