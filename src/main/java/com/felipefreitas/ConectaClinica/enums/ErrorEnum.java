@@ -15,7 +15,8 @@ public enum ErrorEnum {
     CREDENCIAIS_INVALIDAS(401, 100, "Credenciais inválidas"),
     TOKEN_INVALIDO(401, 101, "Token inválido ou expirado"),
     USUARIO_NAO_ENCONTRADO(404, 102, "Usuário não encontrado"),
-    LOGIN_JA_CADASTRADO(409, 103, "Login já cadastrado");
+    LOGIN_JA_CADASTRADO(409, 103, "Login já cadastrado"),
+    CPF_JA_CADASTRADO(409, 104, "CPF já cadastrado");
 
     private final int httpStatus;
     private final int errorCode;

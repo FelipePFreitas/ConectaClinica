@@ -1,5 +1,6 @@
 package com.felipefreitas.ConectaClinica.entity;
 
+import com.felipefreitas.ConectaClinica.enums.RoleUsuario;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,5 +28,9 @@ public class UsuarioEntity {
     @OneToOne
     @JoinColumn(name = "funcionario_id", referencedColumnName = "id")
     private FuncionarioEntity funcionario;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private RoleUsuario role;
 
 }

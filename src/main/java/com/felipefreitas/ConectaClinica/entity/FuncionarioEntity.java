@@ -12,14 +12,13 @@ import java.util.UUID;
 @Getter
 @Setter
 @Builder
-public abstract class FuncionarioEntity {
+public class FuncionarioEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     private String nome;
 
-
-
+    private String cpf;
 
 }
