@@ -10,6 +10,8 @@ public record FuncionarioResponseDTO(
 
         String nome,
 
-        String cpf
+        String cpf,
+
+        String email
 ) {
 }

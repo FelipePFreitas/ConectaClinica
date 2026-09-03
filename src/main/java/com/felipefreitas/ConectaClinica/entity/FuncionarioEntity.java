@@ -17,8 +17,13 @@ public class FuncionarioEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(nullable = false)
     private String nome;
 
+    @Column(nullable = false)
     private String cpf;
+
+    @Column(nullable = false)
+    private String email;
 
 }

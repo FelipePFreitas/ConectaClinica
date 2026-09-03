@@ -1,6 +1,7 @@
 package com.felipefreitas.ConectaClinica.dto.funcionario;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 public record FuncionarioRequestDTO(
@@ -10,6 +11,10 @@ public record FuncionarioRequestDTO(
 
 
         @NotBlank(message = "CPF é obrigatório")
-        String cpf
+        String cpf,
+
+        @NotBlank(message = "Email é obrigatório")
+        @Email(message = "Email inválido")
+        String email
 ) {
 }

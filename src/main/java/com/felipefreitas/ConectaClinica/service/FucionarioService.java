@@ -28,9 +28,14 @@ public class FucionarioService {
             throw new BaseExceptions(ErrorEnum.CPF_JA_CADASTRADO);
         }
 
+        if (funcionarioRepository.existsByEmail(funcionarioRequestDTO.email())) {
+            throw new BaseExceptions(ErrorEnum.EMAIL_JA_CADASTRADO);
+        }
+
         FuncionarioEntity funcionarioEntity = FuncionarioEntity.builder()
                 .nome(funcionarioRequestDTO.nome())
                 .cpf(funcionarioRequestDTO.cpf())
+                .email(funcionarioRequestDTO.email())
                 .build();
 
         FuncionarioEntity funcionarioSalvo = funcionarioRepository.save(funcionarioEntity);
@@ -49,6 +54,7 @@ public class FucionarioService {
         return new FuncionarioResponseDTO(
                 funcionarioSalvo.getId(),
                 funcionarioSalvo.getNome(),
-                funcionarioSalvo.getCpf());
+                funcionarioSalvo.getCpf(),
+                funcionarioSalvo.getEmail());
     }
 }

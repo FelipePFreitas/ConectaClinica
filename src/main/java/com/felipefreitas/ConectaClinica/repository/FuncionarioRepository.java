@@ -7,4 +7,5 @@ import java.util.UUID;
 
 public interface FuncionarioRepository extends JpaRepository<FuncionarioEntity, UUID> {
     boolean existsByCpf(String cpf);
+    boolean existsByEmail(String email);
 }
