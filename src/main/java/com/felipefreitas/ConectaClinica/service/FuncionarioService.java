@@ -3,11 +3,12 @@ package com.felipefreitas.ConectaClinica.service;
 import com.felipefreitas.ConectaClinica.dto.funcionario.FuncionarioRequestDTO;
 import com.felipefreitas.ConectaClinica.dto.funcionario.FuncionarioResponseDTO;
 import com.felipefreitas.ConectaClinica.entity.FuncionarioEntity;
+import com.felipefreitas.ConectaClinica.entity.RoleUsuarioEntity;
 import com.felipefreitas.ConectaClinica.entity.UsuarioEntity;
 import com.felipefreitas.ConectaClinica.enums.ErrorEnum;
-import com.felipefreitas.ConectaClinica.enums.RoleUsuario;
 import com.felipefreitas.ConectaClinica.exceptions.BaseExceptions;
 import com.felipefreitas.ConectaClinica.repository.FuncionarioRepository;
+import com.felipefreitas.ConectaClinica.repository.RoleUsuarioRepository;
 import com.felipefreitas.ConectaClinica.repository.UsuarioRepository;
 import com.felipefreitas.ConectaClinica.util.SenhaUtil;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,7 @@ public class FuncionarioService {
 
 
     private final FuncionarioRepository funcionarioRepository;
+    private final RoleUsuarioRepository roleUsuarioRepository;
     private final UsuarioRepository usuarioRepository;
     private final PasswordEncoder passwordEncoder;
     private final EmailService emailService;
@@ -46,11 +48,16 @@ public class FuncionarioService {
 
         String senhaAleatoria = SenhaUtil.geradorSenhaAleatoria(10);
 
+        var roleUsuario = roleUsuarioRepository.findByNome("ROLE_USER")
+                .orElseGet(() -> roleUsuarioRepository.save(
+                        RoleUsuarioEntity.builder().nome("ROLE_USER").build()
+                ));
+
         UsuarioEntity usuarioEntity = UsuarioEntity.builder()
                 .login(funcionarioSalvo.getCpf())
                 .senha(passwordEncoder.encode(senhaAleatoria))
                 .funcionario(funcionarioSalvo)
-                .role(RoleUsuario.ROLE_USER)
+                .role(roleUsuario)
                 .build();
 
         usuarioRepository.save(usuarioEntity);

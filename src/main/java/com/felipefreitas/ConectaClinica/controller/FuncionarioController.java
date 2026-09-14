@@ -17,7 +17,6 @@ public class FuncionarioController {
     private final FuncionarioService funcionarioService;
 
     @PostMapping
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<FuncionarioResponseDTO> cadastrarFuncionario(@RequestBody @Valid FuncionarioRequestDTO funcionarioRequestDTO){
         FuncionarioResponseDTO funcionarioResponseDTO = funcionarioService.cadastrarFuncionario(funcionarioRequestDTO);
         return ResponseEntity.ok().body(funcionarioResponseDTO);
