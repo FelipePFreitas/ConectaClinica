@@ -80,6 +80,12 @@ A ConectaClínica oferece uma API stateless para aplicações web, mobile e port
 - Validação de datas futuras, duração positiva, profissional ativo e conflitos de agenda.
 - Respostas REST para falhas de autenticação, autorização e erros de negócio.
 
+O envio da senha inicial é publicado na exchange `conectaclinica.notifications` com a chave
+`email.initial-password`. O consumidor da fila durável
+`conectaclinica.email.initial-password` processa a mensagem e envia o e-mail via SMTP,
+evitando que a requisição de cadastro fique bloqueada pelo provedor de e-mail. Mensagens
+que falharem permanecem sujeitas às políticas padrão de reentrega do listener.
+
 ### Em definição ou expansão
 
 - Prontuário eletrônico e histórico clínico.
@@ -128,7 +134,7 @@ Isso inicia:
 | Serviço | Porta | Uso |
 | --- | ---: | --- |
 | PostgreSQL | `5432` | Banco `conectaclinica` |
-| RabbitMQ | `5672` | Mensageria |
+| RabbitMQ | `5672` / `15672` | Mensageria / painel de administração |
 
 ### 2. Iniciar a API
 
@@ -164,6 +170,9 @@ As propriedades possuem valores locais padrão, mas os ambientes devem fornecer 
 | `JWT_EXPIRATION` | `86400000` | Expiração do token em milissegundos |
 
 Não versionar senhas, chaves JWT ou credenciais SMTP. Para produção, substitua todos os valores de desenvolvimento e use um gerenciador de segredos.
+
+O painel local do RabbitMQ fica disponível em `http://localhost:15672`, usando as credenciais
+definidas por `RABBITMQ_USER` e `RABBITMQ_PASSWORD`.
 
 ## Autenticação
 
