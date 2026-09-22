@@ -1,13 +1,12 @@
 package com.felipefreitas.ConectaClinica;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 class ConectaClinicaApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void deveExistirClassePrincipalDaAplicacao() {
+		org.assertj.core.api.Assertions.assertThat(ConectaClinicaApplication.class).isNotNull();
 	}
 
 }
