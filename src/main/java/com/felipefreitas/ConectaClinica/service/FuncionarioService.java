@@ -48,9 +48,9 @@ public class FuncionarioService {
 
         String senhaAleatoria = SenhaUtil.geradorSenhaAleatoria(10);
 
-        var roleUsuario = roleUsuarioRepository.findByNome("ROLE_USER")
+        var roleUsuario = roleUsuarioRepository.findByNome("FUNCIONARIO")
                 .orElseGet(() -> roleUsuarioRepository.save(
-                        RoleUsuarioEntity.builder().nome("ROLE_USER").build()
+                        RoleUsuarioEntity.builder().nome("FUNCIONARIO").build()
                 ));
 
         UsuarioEntity usuarioEntity = UsuarioEntity.builder()
