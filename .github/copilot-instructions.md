@@ -47,24 +47,31 @@ Configurações de ambiente ficam em:
 src/main/resources/application.properties
 ```
 
+As regras de negócio detalhadas ficam em:
+
+```text
+docs/business-rules.md
+```
+
 Nunca inclua senhas, tokens, chaves JWT ou credenciais SMTP diretamente no código ou em arquivos versionados. Utilize variáveis de ambiente e preserve os valores sensíveis existentes.
 
 ## Regras de implementação
 
 1. Antes de alterar o código, examine as classes e os padrões já existentes e reutilize soluções existentes.
-2. Preserve a separação entre controller, DTO, service, repository e entity.
-3. Controllers devem ser responsáveis por HTTP, validação de entrada e conversão de respostas; regras de negócio devem ficar nos services.
-4. Não exponha entidades JPA diretamente nos endpoints. Use DTOs para requisições e respostas.
-5. Use validações do Bean Validation nos DTOs e trate erros de forma consistente com o `GlobalExceptionHandler`.
-6. Proteja endpoints conforme as regras de autenticação e autorização já definidas em `SecurityConfig`.
-7. Use nomes em português apenas quando isso já estiver estabelecido pelo domínio; mantenha nomes técnicos e APIs consistentes com o código existente.
-8. Não altere contratos existentes sem avaliar compatibilidade com os consumidores da API.
-9. Não adicione dependências sem necessidade. Se uma dependência for indispensável, atualize o `pom.xml` de forma explícita.
-10. Não introduza `catch` genérico nem silencie erros. Erros devem ser propagados ou tratados com uma resposta adequada à API.
-11. Ao criar uma funcionalidade, implemente o fluxo completo necessário: entidade, repository, service, DTOs, controller, validações, segurança e testes, quando aplicável.
-12. Use migrations ou uma estratégia de evolução de banco compatível com o projeto antes de introduzir mudanças persistentes relevantes.
-13. Preserve o comportamento existente e faça alterações cirúrgicas, sem modificar arquivos não relacionados.
-14. Não versione arquivos de build, credenciais, tokens, logs ou configurações locais.
+2. Consulte `docs/business-rules.md` antes de implementar ou alterar uma regra de negócio.
+3. Preserve a separação entre controller, DTO, service, repository e entity.
+4. Controllers devem ser responsáveis por HTTP, validação de entrada e conversão de respostas; regras de negócio devem ficar nos services.
+5. Não exponha entidades JPA diretamente nos endpoints. Use DTOs para requisições e respostas.
+6. Use validações do Bean Validation nos DTOs e trate erros de forma consistente com o `GlobalExceptionHandler`.
+7. Proteja endpoints conforme as regras de autenticação e autorização já definidas em `SecurityConfig`.
+8. Use nomes em português apenas quando isso já estiver estabelecido pelo domínio; mantenha nomes técnicos e APIs consistentes com o código existente.
+9. Não altere contratos existentes sem avaliar compatibilidade com os consumidores da API.
+10. Não adicione dependências sem necessidade. Se uma dependência for indispensável, atualize o `pom.xml` de forma explícita.
+11. Não introduza `catch` genérico nem silencie erros. Erros devem ser propagados ou tratados com uma resposta adequada à API.
+12. Ao criar uma funcionalidade, implemente o fluxo completo necessário: entidade, repository, service, DTOs, controller, validações, segurança e testes, quando aplicável.
+13. Use migrations ou uma estratégia de evolução de banco compatível com o projeto antes de introduzir mudanças persistentes relevantes.
+14. Preserve o comportamento existente e faça alterações cirúrgicas, sem modificar arquivos não relacionados.
+15. Não versione arquivos de build, credenciais, tokens, logs ou configurações locais.
 
 ## Padrão esperado para novas funcionalidades
 
